@@ -10,8 +10,10 @@ django-orm
    :maxdepth: 2
    :caption: Contents:
 
-django-orm is a Python libarary that enables you to harness the power of Django's ORM in standalone
-Python scripts.
+   modules
+
+
+
 
 * :ref:`genindex`
 * :ref:`modindex`

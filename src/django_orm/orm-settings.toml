@@ -1,0 +1,7 @@
+[config]
+app = "db"
+db_name = "default"
+
+[databases.default]
+ENGINE = "django.db.backends.sqlite3"
+NAME = "db.sqlite3"

@@ -7,9 +7,7 @@ Documentation: https://django-orm.readthedocs.io
 
 ## Installation
 
-```
-$ pip install django-orm
-```
+Coming soon.
 
 ## Usage
 

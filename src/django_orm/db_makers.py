@@ -176,7 +176,7 @@ def sqlite() -> dict:
 
 def make_new_db(database, use_env) -> dict:
     """
-    Initiates one of the three connection creation functions depending on the value of ``database``.
+    Calls either ``oracle()``, ``postgresql()``, or ``sqlite()`` depending on the value of ``database``.
 
     :param database: The database for which a connection is going to be created ("oracle", "postgresql", or "sqlite").
     :param use_env: If True, django-orm will prompt the user to configure the connection using a URI environment

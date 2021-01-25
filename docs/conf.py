@@ -12,10 +12,10 @@
 #
 # import os
 # import sys
-# sys.path.insert(0, os.path.abspath('.'))
+# sys.path.insert(0, os.path.abspath(os.path.join('..', 'src', 'django_orm')))
 
+# noinspection PyUnresolvedReferences
 import sphinx_rtd_theme
-
 
 # -- Project information -----------------------------------------------------
 
@@ -26,7 +26,6 @@ author = 'Jason Tolbert Jr'
 # The full version, including alpha/beta/rc tags
 release = '1.0.0'
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -35,6 +34,7 @@ release = '1.0.0'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx_rtd_theme',
+    'sphinx_click'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,7 +44,6 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
 
 # -- Options for HTML output -------------------------------------------------
 

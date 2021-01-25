@@ -27,9 +27,7 @@ orm_settings = utils.get_settings()
 @click.group()
 def cli():
     """
-    django-orm is a Python library that enables you to harness the power of Django's ORM in standalone Python scripts.
-
-    https://github.com/jasonalantolbert/django-orm
+    This is the command line interface for django-orm.
     """
     pass
 
@@ -41,7 +39,12 @@ def about(show_license=False):
     Display license and copyright information.
     """
     if not show_license:
-        print(f"\ndjango-orm Copyright (c) 2021 Jason Tolbert Jr.\n"
+
+        print(f"\ndjango-orm is a Python library that enables you to harness the power of Django's ORM "
+              f"in standalone Python scripts.\n"
+              f"https://github.com/jasonalantolbert/django-orm\n"
+              f"\n"
+              f"django-orm Copyright (c) 2021 Jason Tolbert Jr.\n"
               f"\n"
               f"django-orm is released under the MIT License. See the full license text \n"
               f"by running {Fore.CYAN + 'django-orm about --license' + Fore.RESET}.\n"
@@ -61,6 +64,8 @@ def about(show_license=False):
 def startapp(app_name: str, no_create: bool = False):
     """
     Create a Django app in your project's root directory.
+
+    APP_NAME is the name you want to assign to your app. If left empty, this will default to "db".
     """
     orm_settings["config"]["app"] = app_name  # set app name
 
@@ -132,19 +137,22 @@ def pycharm():
 @cli.group()
 def db():
     """
-    Manage database connections.
+    Use django-orm's database connection management tools.
     """
     pass
 
 
 @db.command()
-@click.argument("db", required=False, default="")
+@click.argument("db", default="")
 @click.option("--env", "use_env", is_flag=True,
               help="Configure the connection using a URI environment variable (Oracle "
                    "and PostgreSQL only.)")
 def add(db: str, use_env: bool = False):
     """
     Add a new database connection.
+
+    DB is the kind of database you want to add a connection for (Oracle, PostgreSQL, or SQLite). You'll be prompted for
+    this value if you don't specify it.
     """
     db = db.casefold()
 
@@ -201,10 +209,12 @@ def add(db: str, use_env: bool = False):
 
 
 @db.command()
-@click.argument("db", required=False, default="")
+@click.argument("db", default="")
 def switch(db: str):
     """
     Switch to a different database connection.
+
+    DB is the name of the connection you want to switch to. You'll be prompted for this value if you don't specify it.
     """
     db = db.casefold()
     db_choices = utils.get_connection_list(include_default=True)
@@ -226,10 +236,15 @@ def switch(db: str):
 
 
 @db.command()
-@click.argument("db", required=False, default="")
+@click.argument("db", default="")
 def edit(db: str):
     """
     Edit an existing database connection.
+
+    The settings for the connection you choose will be opened as a TXT file in your operating system's default editor
+    for those kinds of files.
+
+    DB is the name of the database you want to edit. You'll be prompted for this value if you don't specify it.
     """
     db = db.casefold()
     db_choices = utils.get_connection_list(include_default=False)
@@ -278,10 +293,15 @@ def edit(db: str):
 
 
 @db.command()
-@click.argument("db", required=False, default="")
+@click.argument("db", default="")
 def remove(db: str):
     """
     Remove an existing database connection.
+
+    If you remove your current connection, django-orm will automatically switch to the default SQLite connection.
+
+    DB is the name of the database connection you want to remove. You'll be prompted for
+    this value if you don't specify it.
     """
     db = db.casefold()
     db_choices = utils.get_connection_list(include_default=False)

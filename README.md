@@ -58,7 +58,7 @@ Getting started with django-orm is quick and easy.
 That's it.
 
 This example doesn't demonstrate the full extent of django-orm's capabilities. 
-You'll have to see the [documentation]https://placeholder.link) for that.
+You'll have to see the [documentation](https://placeholder.link) for that.
 
 ## Database Support
 

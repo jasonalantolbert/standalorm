@@ -1,4 +1,11 @@
-sphinx==3.4.3
-sphinx-rtd-theme==0.5.1
-click==7.1.2
-sphinx-click==2.5.0
+python~=3.9.0
+Django~=3.1.5
+click~=7.1.2
+toml~=0.10.2
+pathvalidate~=2.3.2
+path~=15.0.1
+colorama~=0.4.4
+dj-database-url~=0.5.0
+Sphinx==3.4.3
+sphinx-rtd-theme~=0.5.1
+sphinx-click~=2.5.0

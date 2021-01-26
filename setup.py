@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='standalorm',
     version='1.0.0',
-    packages=['standalorm'],
+    packages=['src.standalorm'],
     url='https://github.com/jasonalantolbert/standalorm',
     license='MIT',
     author='Jason Tolbert',

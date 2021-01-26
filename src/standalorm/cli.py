@@ -256,6 +256,8 @@ def edit(db: str):
     if db not in db_choices:
         if not db_choices:
             print(Fore.RED + "\nThere are currently no database connections you can edit.\n")
+        elif db == "default":
+            print(Fore.RED + "\nYou can't edit the default database connecton.\n")
         else:
             print(Fore.RED + "\nThere's no database connection with that name.\n")
     else:
@@ -313,6 +315,8 @@ def remove(db: str):
     if db not in db_choices:
         if not db_choices:
             print(Fore.RED + "\nThere are currently no database connections you can remove.\n")
+        elif db == "default":
+            print(Fore.RED + "\nYou can't remove the default database connecton.\n")
         else:
             print(Fore.RED + "\nThere's no database connection with that name.\n")
     else:

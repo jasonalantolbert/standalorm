@@ -81,7 +81,7 @@ standalorm's full documentation can be found at https://standalorm.readthedocs.i
 
 ## Attributions
 
-standalorm is based on Dan Caron's [Django ORM Standalone Template](https://github.com/dancaron/standalorm).
+standalorm is based on Dan Caron's [Django ORM Standalone Template](https://github.com/dancaron/django-orm).
 
 "Django" is a registered trademark of the Django Software Foundation, which does not endorse this software.
 

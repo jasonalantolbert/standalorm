@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/jasonalantolbert/standalorm"
 documentation = "https://standalorm.readthedocs.io"
-keywords = ["django", "orm"]
+keywords = ["django", "orm", "standalone"]
 
 [tool.poetry.dependencies]
 python = "^3.9.0"

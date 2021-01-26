@@ -1,0 +1,11 @@
+[config]
+app = "app"
+db_name = "standoff"
+
+[databases.default]
+ENGINE = "django.db.backends.sqlite3"
+NAME = "db.sqlite3"
+
+[databases.standoff]
+ENGINE = "django.db.backends.sqlite3"
+NAME = "stand.sqlite3"

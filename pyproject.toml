@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "django_orm"
+name = "standalorm"
 version = "1.0.0"
 description = "A Python library that enables you to harness the power of Django's ORM in standalone Python scripts."
 authors = ["Jason Tolbert <jasonalantolbert@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/jasonalantolbert/django-orm"
-documentation = "https://django-orm.readthedocs.io"
+homepage = "https://github.com/jasonalantolbert/standalorm"
+documentation = "https://standalorm.readthedocs.io"
 keywords = ["django", "orm"]
 
 [tool.poetry.dependencies]
@@ -25,7 +25,7 @@ sphinx-rtd-theme = "^0.5.1"
 sphinx-click = "^2.5.0"
 
 [tool.poetry.scripts]
-django-orm = "django_orm.cli:cli"
+standalorm = "standalorm.cli:cli"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -14,9 +14,9 @@ orm_settings = toml.load(os.path.join(lib_root, "orm-settings.toml"))
 
 def get_settings() -> dict:
     """
-    Gets django-orm's settings (orm-settings.toml, NOT to be confused with Django's settings.py).
+    Gets standalorm's settings (orm-settings.toml, NOT to be confused with Django's settings.py).
 
-    :return: A dictionary of django-orm's settings.
+    :return: A dictionary of standalorm's settings.
     """
     return orm_settings
 

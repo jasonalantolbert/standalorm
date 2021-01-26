@@ -1,5 +1,5 @@
 """
-django-orm's command line interface.
+standalorm's command line interface.
 """
 
 import os
@@ -10,10 +10,10 @@ from tempfile import TemporaryDirectory
 
 import click
 import colorama
-import django_orm.utils as utils
+import standalorm.utils as utils
 import toml
 from colorama import Fore
-from django_orm.db_makers import make_new_db
+from standalorm.db_makers import make_new_db
 from path import Path
 
 colorama.init(autoreset=True)
@@ -27,7 +27,7 @@ orm_settings = utils.get_settings()
 @click.group()
 def cli():
     """
-    This is the command line interface for django-orm.
+    This is root of standalorm's command line interface.
     """
     pass
 
@@ -40,14 +40,14 @@ def about(show_license=False):
     """
     if not show_license:
 
-        print(f"\ndjango-orm is a Python library that enables you to harness the power of Django's ORM "
+        print(f"\nstandalorm is a Python library that enables you to harness the power of Django's ORM "
               f"in standalone Python scripts.\n"
-              f"https://github.com/jasonalantolbert/django-orm\n"
+              f"https://github.com/jasonalantolbert/standalorm\n"
               f"\n"
-              f"django-orm Copyright (c) 2021 Jason Tolbert Jr.\n"
+              f"standalorm Copyright (c) 2021 Jason Tolbert Jr.\n"
               f"\n"
-              f"django-orm is released under the MIT License. See the full license text \n"
-              f"by running {Fore.CYAN + 'django-orm about --license' + Fore.RESET}.\n"
+              f"standalorm is released under the MIT License. See the full license text \n"
+              f"by running {Fore.CYAN + 'standalorm about --license' + Fore.RESET}.\n"
               f"\n"
               f"'Django' is a registered trademark of the Django Software Foundation, which \n"
               f"does not endorse this software.\n")
@@ -60,7 +60,7 @@ def about(show_license=False):
 @click.argument("app_name", required=False, default="db")
 @click.option("--no-create", "-nc", "no_create", is_flag=True,
               help="Don't create a new folder or the __init__.py and models.py files. Use this if you need to point "
-                   "django-orm to an existing app directory without creating a new one.")
+                   "standalorm to an existing app directory without creating a new one.")
 def startapp(app_name: str, no_create: bool = False):
     """
     Create a Django app in your project's root directory.
@@ -137,7 +137,7 @@ def pycharm():
 @cli.group()
 def db():
     """
-    Use django-orm's database connection management tools.
+    Use standalorm's database connection management tools.
     """
     pass
 
@@ -165,7 +165,7 @@ def add(db: str, use_env: bool = False):
     if not db:
         db = utils.selection_prompt("Choose a database:", db_choices)
     elif db not in [choice.casefold() for choice in db_choices]:
-        print(Fore.RED + f"\nThat's not a valid database. django-orm supports {', '.join(db_choices[:-1])} "
+        print(Fore.RED + f"\nThat's not a valid database. standalorm supports {', '.join(db_choices[:-1])} "
                          f"and {db_choices[-1]}.\n")
         exit()
 
@@ -173,8 +173,8 @@ def add(db: str, use_env: bool = False):
     db_info = make_new_db(db, use_env)
 
     print(f"\nChoose a name for this database connection. This name will be used to identify the \n"
-          f"database to both django-orm and you, so make sure it's both unique and easily\n"
-          f"recognizable. django-orm will generate a random name if you leave this empty.\n"
+          f"database to both standalorm and you, so make sure it's both unique and easily\n"
+          f"recognizable. standalorm will generate a random name if you leave this empty.\n"
           f"(Enter !names to see what names you can't use.)")
 
     while True:
@@ -268,7 +268,7 @@ def edit(db: str):
 
             # write connection info to TXT file
             with open(tmp_filepath, "w") as file:
-                file.write("# (django-orm) Make your changes, then close the editor. DO NOT EDIT THIS LINE.\n\n")
+                file.write("# (standalorm) Make your changes, then close the editor. DO NOT EDIT THIS LINE.\n\n")
                 file.write(toml.dumps(connection))
 
             # open TXT file in system editor
@@ -298,7 +298,7 @@ def remove(db: str):
     """
     Remove an existing database connection.
 
-    If you remove your current connection, django-orm will automatically switch to the default SQLite connection.
+    If you remove your current connection, standalorm will automatically switch to the default SQLite connection.
 
     DB is the name of the database connection you want to remove. You'll be prompted for
     this value if you don't specify it.

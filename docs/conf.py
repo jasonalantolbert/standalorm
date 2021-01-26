@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'django-orm'
+project = 'standalorm'
 copyright = '2021, Jason Tolbert Jr'
 author = 'Jason Tolbert Jr'
 

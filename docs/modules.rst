@@ -1,7 +1,7 @@
 ORM Initialization
 ==================
 
-.. automodule:: django_orm.orm_init
+.. automodule:: standalorm.orm_init
    :members:
    :undoc-members:
    :show-inheritance:
@@ -11,7 +11,7 @@ ORM Initialization
 Utility functions
 =================
 
-.. automodule:: django_orm.utils
+.. automodule:: standalorm.utils
    :members:
    :undoc-members:
    :show-inheritance:
@@ -20,7 +20,7 @@ Utility functions
 Database connection creators
 ============================
 
-.. automodule:: django_orm.db_makers
+.. automodule:: standalorm.db_makers
    :members:
    :undoc-members:
    :show-inheritance:
@@ -29,6 +29,6 @@ Database connection creators
 Command-line interface
 ======================
 
-.. click:: django_orm.cli:cli
-   :prog: django-orm
+.. click:: standalorm.cli:cli
+   :prog: standalorm
    :nested: full

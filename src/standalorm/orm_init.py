@@ -1,5 +1,5 @@
 """
-Provides a function for initializing django-orm.
+Provides a function for initializing standalorm.
 """
 
 
@@ -9,7 +9,7 @@ sys.dont_write_bytecode = True
 
 import os
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_orm.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "standalorm.settings")
 
 import django
 from path import Path
@@ -17,7 +17,7 @@ from path import Path
 
 def orm_init(file_dunder):
     """
-    Initializes django-orm. This function is the only thing from the library a typical end user should be importing
+    Initializes standalorm. This function is the only thing from the library a typical end user should be importing
     into their code.
 
     This function should ideally be called at the beginning of the user's code, but strictly speaking,
@@ -28,7 +28,7 @@ def orm_init(file_dunder):
 
     :param file_dunder: ``orm_init()`` should always be called with the dunder variable ``__file__`` as its sole
                          argument. This is used to ascertain the directory from which the function is being called so
-                         django-orm knows where to look for the SQLite database, if one is in use. While this parameter
+                         standalorm knows where to look for the SQLite database, if one is in use. While this parameter
                          isn't strictly necessary when a non-SQLite database is being used, passing it in regardless
                          does no harm and it's easier for the end user to just always pass it in without having to
                          worry about what database is being used.

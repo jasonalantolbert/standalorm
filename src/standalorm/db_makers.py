@@ -24,7 +24,7 @@ def env_config() -> dict:
     """
     env_var = input(
         "\nIdentify the name of the environment variable the connection URI will be bound to. You will have to \n"
-        "set this environment variable manually outside of django-orm, and the name must match EXACTLY \n"
+        "set this environment variable manually outside of standalorm, and the name must match EXACTLY \n"
         "what you input here (including case sensitivity).\n"
         "> "
     )
@@ -87,7 +87,7 @@ def postgresql(use_env: bool) -> dict:
     try:
         import psycopg2
     except ImportError:
-        print(f"\nUsing PostgreSQL databases requires psycopg2, which django-orm was unable to find in your\n"
+        print(f"\nUsing PostgreSQL databases requires psycopg2, which standalorm was unable to find in your\n"
               f"environment. Install psycopg2 and try again.\n"
               f"\n"
               f"{Fore.CYAN + 'pip install psycopg2' + Fore.RESET}\n")
@@ -145,7 +145,7 @@ def sqlite() -> dict:
         return is_valid_filepath(path, platform=os_name)
 
     print(f"\nEnter the path to an SQLite3 (.sqlite3) database. The path must be relative to {user_root}.\n"
-          f"If no SQLite3 database exists at this path, django-orm will create one for you the first time you "
+          f"If no SQLite3 database exists at this path, standalorm will create one for you the first time you "
           f"apply migrations.\n")
 
     while True:
@@ -179,7 +179,7 @@ def make_new_db(database, use_env) -> dict:
     Calls either ``oracle()``, ``postgresql()``, or ``sqlite()`` depending on the value of ``database``.
 
     :param database: The database for which a connection is going to be created ("oracle", "postgresql", or "sqlite").
-    :param use_env: If True, django-orm will prompt the user to configure the connection using a URI environment
+    :param use_env: If True, standalorm will prompt the user to configure the connection using a URI environment
                     variable (Oracle and PostgreSQL only).
     :return: A dictionary containing information about the newly-created database connection.
     """

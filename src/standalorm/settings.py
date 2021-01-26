@@ -2,8 +2,7 @@ import os
 import uuid
 
 import dj_database_url
-import django_orm.utils as utils
-import toml
+import standalorm.utils as utils
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 

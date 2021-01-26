@@ -59,18 +59,18 @@ Getting started with standalorm is quick and easy.
 That's it.
 
 This example doesn't demonstrate the full extent of standalorm's capabilities. 
-You'll have to see the [documentation](https://placeholder.link) for that.
+You'll have to see the [documentation](https://standalorm.readthedocs.io) for that.
 
 ## Database Support
 
 standalorm supports Oracle, PostgreSQL, and SQLite databases. A SQLite database connection comes configured for you,
 and standalorm will use it by default if you don't add a different one yourself. More on adding database connections can
-be found in the [documentation](https://placeholder.link).
+be found in the [documentation](https://standalorm.readthedocs.io).
 
 ## Additional Notes
 
 standalorm is intended for people who are already familiar with Django's ORM; as such, the basics of how to use the
-ORM are outside the scope of both this README and standalorm's [documentation](https://placeholder.link). If you're
+ORM are outside the scope of both this README and standalorm's [documentation](https://standalorm.readthedocs.io). If you're
 looking to familiarize yourself with Django's ORM, see [Django's own documentation](https://docs.djangoproject.com/en/3.1/topics/db/),
 particularly the sections on [models](https://docs.djangoproject.com/en/3.1/topics/db/models/) and [making queries](https://docs.djangoproject.com/en/3.1/topics/db/queries/).
 

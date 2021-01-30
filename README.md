@@ -1,5 +1,8 @@
 # standalorm
 
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/standalorm)
+![PyPI - License](https://img.shields.io/pypi/l/standalorm)
+
 A Python library that enables you to harness the power of Django's ORM in standalone
 Python scripts.
 
